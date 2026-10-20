@@ -34,6 +34,10 @@
     --font-weight-regular: 400;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #0F3C65;
     margin:0;
@@ -424,13 +428,17 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--3)
+    margin-bottom: 20px;
 }
 .contacts .container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    background-color: var(--3);
+    border-radius: 60px;
+
     gap: 290px;
     padding: 50px 55px 50px 55px;
 }
