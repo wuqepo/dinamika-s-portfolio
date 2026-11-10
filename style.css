@@ -35,7 +35,14 @@
 }
 
 html{
+    box-sizing: border-box;
     scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before{
+	box-sizing: inherit;
 }
 
 body {
@@ -57,6 +64,11 @@ img {
     margin: 0px;
 }
 
+img {
+    max-width: 100%; /* Картинка никогда не будет шире своего родителя */
+    height: auto;    /* Высота подстраивается автоматически, чтобы не было искажений */
+}
+
 a{
     color: #000000;
     text-decoration: none;
@@ -67,14 +79,21 @@ a img:hover{
     color: #E8D88F;
 }
 
+ul {
+  list-style-type: none; /* Убирает маркеры (точки) */
+  margin: 0;             /* Убирает внешние отступы */
+  padding: 0;            /* Убирает внутренние отступы (стук) */
+}
+
 button {
     background: none;
     border: none;
     padding: 0;
 }
 .container{
-    padding: 0 15px 0 15px;
-    min-width: 1110px;
+    max-width: 1120px;
+    padding: 0 15px;
+    margin: 0 auto;
 }
 
 
@@ -89,18 +108,18 @@ button {
 #header-text:hover{
     color: #E8D88F;
 }
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.header{
+    margin-bottom: 80px;
 }
+
 .header .container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid var(--1);
-    padding: 25px 15px 25px 15px;
+    padding: 25px 15px;
 
 }
 .header-title {
@@ -114,10 +133,59 @@ button {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 100px;
 }
-/* .header-btn {
-} */
+.menu-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.menu-btn{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.menu-btn::after,
+.menu-btn::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #fff2ba;
+}
+.menu-btn::after{
+    top: 0;
+}
+.menu-btn::before{
+    bottom: 0;
+}
+.menu-btn span{
+    height: 2px;
+    background-color: #fff2ba;
+    width: 100%;
+}
+
+.menu-btn.active span{
+    opacity: 0;
+}
+
+.menu-btn.active::after{
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+.menu-btn.active::before{
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
 .header-contact-btns {
     display: flex;
     flex-direction: row;
@@ -147,14 +215,12 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 80px;
 }
 .welcome .container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 1140px;
     height: 440px;
     background-color: var(--3);
     border-radius: 60px;
@@ -163,12 +229,12 @@ button {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    margin-left: 20px;
 }
 .welcome-title {
     font-weight: 400;
     font-size: 48px;
-    text-align: center;
-    color: #fff;
+    color: #f5f5f5;
     font-family: var(--second-family);
 }
 .hi-img {
@@ -179,9 +245,8 @@ button {
     font-weight: var(--font-weight-regular);
     font-size: 18px;
     line-height: 1.7;
-    color: #fff;
+    color: #f5f5f5;
     font-family: var(--second-family);
-    width: 350px;
 }
 .welcome-btns {
     display: flex;
@@ -630,4 +695,155 @@ button {
     font-size: 20px;
     text-align: center;
     color: var(--3);
+}
+
+@media (max-width:1135px){
+    .welcome-title {
+        font-size: 35px;
+    }
+    .welcome-desc{
+        font-size: 13px;
+    }
+    .welcome-text{
+        gap: 15px;
+    }
+    .welcome-img{
+        width: 440px;
+    }
+    .welcome .container{
+        height: 350px;
+    }
+}
+@media (max-width:900px){
+    .welcome-title {
+        font-size: 30px;
+    }
+    .welcome-desc{
+        font-size: 15px;
+    }
+    .welcome-text{
+        gap: 13px;
+    }
+    .welcome-img{
+        width: 390px;
+    }
+    .welcome .container{
+        height: 300px;
+    }
+    .welcome-btns{
+        gap:18px
+    }
+    .welcome-btn{
+        width: 130px;
+    }
+}
+@media (max-width:800px) {
+    .menu-btn{
+    display: flex;
+    }
+    .menu-list{
+        position: absolute;
+        inset: 0;
+        background-color:#012c4e;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-100%);
+        transition: transform .3s ease-in-out;
+    }
+    .menu-list.active{
+        transform: translateY(0);
+    }
+    .header-contact-btn svg {
+        width: 24px;  /* Новый размер */
+        height: 24px; /* Новый размер */
+    }
+    .welcome-img{
+        width: 330px;
+    }
+    .welcome .container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 740px){
+    .welcome-title {
+        font-size: 25px;
+    }
+    .welcome-desc {
+        font-size: 10px;
+    }
+    .welcome-btn {
+        width: 100px;
+        font-size: 15px;
+        height: 30px;
+    }
+    .hi-img{
+        width:40px;
+    }
+}
+
+@media (max-width: 580px){
+    .welcome-img {
+        width: 290px;
+    }
+    .welcome .container {
+        height: 230px;
+    }
+}
+@media (max-width: 530px){
+    .welcome-img {
+        width: 230px;
+    }
+    .welcome-title {
+        font-size: 20px;
+    }
+    .welcome .container {
+        height: 190px;
+    }
+    .hi-img{
+        width:30px;
+    }
+    .welcome-btn {
+        width: 80px;
+        font-size: 11px;
+        height: 20px;
+    }
+}
+@media (max-width:500px){
+    .welcome-title {
+        font-size: 16px;
+    }
+}
+@media (max-width: 465px){
+    .welcome-img{
+        display: none;
+    }
+    .welcome-text{
+        align-items: center;
+    }
+    .welcome-title {
+        font-size: 30px;
+    }
+    .hi-img{
+        width: 35px;
+    }
+    .welcome-desc {
+        font-size: 13px;
+        width: 80%;
+        text-align: center;
+    }
+    .welcome-btn {
+        width: 100px;
+        font-size: 15px;
+        height: 30px;
+    }
+}
+@media (max-width: 360px){
+    .welcome-title {
+        font-size: 24px;
+    }
+    .welcome-desc{
+        font-size: 13px;
+    }
 }
