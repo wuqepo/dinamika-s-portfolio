@@ -111,6 +111,7 @@ button {
 
 .header{
     margin-bottom: 80px;
+    
 }
 
 .header .container {
@@ -215,6 +216,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 115px;
 }
 .welcome .container {
     display: flex;
@@ -277,24 +279,19 @@ button {
     color: var(--1);
 }
 /* PROJECTS */
-.projects {
+.projects .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 115px;
-}
-.projects .container {
+    gap: 30px;
     position: relative;
-    min-height: 1000px;
-    /* display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center; */
 }
 .PROJECTS-title1 {
     position: absolute;
-    top: 115px;
-    left: 75px;
+    left: 45%;
+    bottom: 30%;
+    z-index: -1;
 
     font-family: var(--font4);
     font-weight: 400;
@@ -303,8 +300,9 @@ button {
 }
 .PROJECTS-title2 {
     position: absolute;
-    top: 520px;
-    left: 490px;
+    left: 7%;
+    top: 15%;
+    z-index: -1;
 
     font-family: var(--font4);
     font-weight: 400;
@@ -313,16 +311,13 @@ button {
     color: var(--5);
 }
 .project-card1 {
-    position: absolute;
-    top: 0;
-    left: 460px;
-    z-index: 1;
+    margin-left: 40%;
     
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px 10px 5px 25px;
+    padding: 15px 10px;
     width: 600px;
     height: 370px;
     background: var(--3);
@@ -334,16 +329,13 @@ button {
     transform: translateY(2px);
 }
 .project-card2 {
-    position: absolute;
-    top: 410px;
-    left: 40px;
-    z-index: 1;
+    margin-left: -40%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px 10px 5px 25px;
+    padding: 15px 10px;
     width: 600px;
     height: 370px;
     background: var(--3);
@@ -409,10 +401,6 @@ button {
     justify-content: center;
     align-items: center;
     gap: 15px;
-
-    position: absolute;
-    top: 840px;
-    left: 280px;
 
     font-family: var(--font-family);
     font-weight: 400;
@@ -702,7 +690,7 @@ button {
         font-size: 35px;
     }
     .welcome-desc{
-        font-size: 13px;
+        font-size: 20px;
     }
     .welcome-text{
         gap: 15px;
@@ -712,6 +700,37 @@ button {
     }
     .welcome .container{
         height: 350px;
+    }
+}
+@media (max-width: 1025px){
+    .welcome{
+        margin-bottom: 60px;
+    }
+
+
+    .PROJECTS-title1{
+        font-size: 100px;
+    }
+    .PROJECTS-title2{
+        font-size: 100px;
+        /* left: 15% */
+    }
+    .project-card1{
+        width: 500px;
+        height: 310px;
+        /* margin-left: 30%; */
+    }
+    .project-card2{
+        width: 500px;
+        height: 310px;
+        /* margin-left: -30%; */
+    }
+    .card-img{
+        width: 60%;
+        margin: 10px 0;
+    }
+    .card-desc{
+        font-size: 15px;
     }
 }
 @media (max-width:900px){
@@ -750,6 +769,7 @@ button {
         align-items: center;
         transform: translateY(-100%);
         transition: transform .3s ease-in-out;
+        z-index: 9;
     }
     .menu-list.active{
         transform: translateY(0);
@@ -763,6 +783,48 @@ button {
     }
     .welcome .container {
         height: 250px;
+    }
+
+    .PROJECTS-title1{
+        font-size: 70px;
+    }
+    .PROJECTS-title2{
+        font-size: 70px;
+    }
+    .project-card1{
+        width: 400px;
+        height: 247px;
+        margin-left: 30%;
+    }
+    .project-card2{
+        width: 400px;
+        height: 247px;
+        margin-left: -30%;
+    }
+    .card-img{
+        width: 60%;
+    }
+    .card-desc{
+        font-size: 10px;
+    }
+    .card-btn{
+        height: 30px;
+        width: 200px;
+        font-size: 20px;
+    }
+    .card-mini-desc{
+        font-size: 7px;
+    }
+    .projects-all-btn{
+        width: 400px;
+        height: 65px;
+        
+    }
+    .watch-all{
+        font-size: 24px;
+    }
+    .folder-icon{
+        width: 30px;
     }
 }
 
@@ -780,6 +842,42 @@ button {
     }
     .hi-img{
         width:40px;
+    }
+}
+
+@media (max-width: 600px){
+    .PROJECTS-title1{
+        font-size: 60px;
+    }
+    .PROJECTS-title2{
+        font-size: 60px;
+    }
+    .project-card1{
+        width: 320px;
+        height: 197px;
+        margin-left: 30%;
+    }
+    .project-card2{
+        width: 320px;
+        height: 197px;
+        margin-left: -30%;
+    }
+    .card-title{
+        font-size: 25px;
+    }
+    .card-img{
+        width: 60%;
+    }
+    .card-desc{
+        font-size: 8px;
+    }
+    .card-btn{
+        height: 25px;
+        width: 170px;
+        font-size: 17px;
+    }
+    .card-mini-desc{
+        font-size: 5px;
     }
 }
 
@@ -809,7 +907,21 @@ button {
         font-size: 11px;
         height: 20px;
     }
+    .header {
+        margin-bottom: 40px;
+    }
+
 }
+
+@media (max-width:520px){
+    .PROJECTS-title1{
+        font-size: 50px;
+    }    
+    .PROJECTS-title2 {
+        font-size: 50px;
+    }
+}
+
 @media (max-width:500px){
     .welcome-title {
         font-size: 16px;
@@ -839,6 +951,38 @@ button {
         height: 30px;
     }
 }
+@media (max-width: 450px){
+    .projects-all-btn {
+        width: 350px;
+        height: 55px;
+    }
+    .watch-all {
+        font-size: 20px;
+    }
+    .project-card1 {
+        width: 270px;
+        height: 167px;
+    }
+    .project-card2 {
+        width: 270px;
+        height: 167px;
+    }
+    .PROJECTS-title1{
+        font-size: 40px;
+        left: 50%;
+    }    
+    .PROJECTS-title2 {
+        font-size: 40px;
+    }
+    .card-img {
+        width: 45%;
+    }
+    .card-btn {
+        width: 150px;
+        font-size: 15px;
+    }
+}
+
 @media (max-width: 360px){
     .welcome-title {
         font-size: 24px;
