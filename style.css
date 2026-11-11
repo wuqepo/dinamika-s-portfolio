@@ -297,7 +297,7 @@ button {
 }
 .PROJECTS-title1 {
     position: absolute;
-    left: 45%;
+    left: 43%;
     bottom: 30%;
     z-index: -1;
 
@@ -308,7 +308,7 @@ button {
 }
 .PROJECTS-title2 {
     position: absolute;
-    right: 45%;
+    right: 43%;
     top: 15%;
     z-index: -1;
 
@@ -485,22 +485,22 @@ button {
 /* CONTACTS */
 
 .contacts {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+    justify-content: center;*/
+    margin-bottom: 20px; 
 }
 .contacts .container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
     background-color: var(--3);
     border-radius: 60px;
 
-    gap: 290px;
+    /* gap: 290px; */
     padding: 50px 55px 50px 55px;
 }
 .contancts-desc {
@@ -706,6 +706,9 @@ button {
     .welcome .container{
         height: 350px;
     }
+    .contancts-desc{
+        font-size: 25px;
+    }
 }
 @media (max-width: 1025px){
     .welcome{
@@ -736,6 +739,12 @@ button {
     }
     .card-desc{
         font-size: 15px;
+    }
+    .contancts-desc{
+        font-size: 20px;
+    }
+    .contacts .container{
+        /* gap: 160px; */
     }
 }
 @media (max-width:900px){
@@ -774,6 +783,12 @@ button {
     }
     #aboutme-title-part {
         font-size: 45px;
+    }
+    .contancts-desc{
+        font-size: 18px;
+    }
+    .contacts .container{
+        /* gap: 150px; */
     }
 }
 @media (max-width:800px) {
@@ -849,6 +864,17 @@ button {
     .folder-icon{
         width: 30px;
     }
+
+    .tg-btn{
+        font-size:19px;
+        width: 250px;
+        height: 35px;
+    }
+    .mail-btn{
+        font-size:19px;
+        width: 250px;
+        height: 35px;
+    }
 }
 
 @media (max-width: 740px){
@@ -908,6 +934,16 @@ button {
     .card-mini-desc{
         font-size: 5px;
     }
+    .tg-btn{
+        font-size: 16px;
+        width: 200px;
+        height: 30px;
+    }
+    .mail-btn{
+        font-size: 16px;
+        width: 200px;
+        height: 30px;
+    }
 }
 
 @media (max-width: 580px){
@@ -916,6 +952,9 @@ button {
     }
     .welcome .container {
         height: 230px;
+    }
+    .contacts-title{
+        font-size: 25px;
     }
 }
 @media (max-width: 530px){
@@ -943,6 +982,18 @@ button {
         font-size: 16px;
     }
 
+    .contacts .container{
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 10px;
+        gap: 40px;
+    }
+    .contancts-desc{
+        text-align: center;
+    }
+    .contacts-title-section{
+        margin: 20px 0;
+    }
 }
 
 @media (max-width:520px){
