@@ -18,7 +18,12 @@
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'Bondi';
+    src: url('FONTS/bondi.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root {
     --5: #FFE873;
@@ -147,8 +152,8 @@ button {
     display: none;
     justify-content: center;
     align-items: center;
-    width: 35px;
-    height: 20px;
+    width: 30px;
+    height: 18px;
     position: relative;
     z-index: 10;
 }
@@ -279,13 +284,16 @@ button {
     color: var(--1);
 }
 /* PROJECTS */
+.projects{
+    margin-bottom: 80px;
+    position: relative;
+}
 .projects .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 30px;
-    position: relative;
 }
 .PROJECTS-title1 {
     position: absolute;
@@ -293,18 +301,18 @@ button {
     bottom: 30%;
     z-index: -1;
 
-    font-family: var(--font4);
+    font-family: 'Bondi';
     font-weight: 400;
     font-size: 120px;
     color: var(--5);
 }
 .PROJECTS-title2 {
     position: absolute;
-    left: 7%;
+    right: 45%;
     top: 15%;
     z-index: -1;
 
-    font-family: var(--font4);
+    font-family: 'Bondi';
     font-weight: 400;
     font-size: 120px;
     text-align: center;
@@ -436,7 +444,7 @@ button {
     position: relative;
 }
 .aboutme-title {
-    font-family: var(--font4);
+    font-family: 'Bondi';
     font-weight: 400;
     font-size: 40px;
     color: var(--5);
@@ -446,17 +454,14 @@ button {
     font-size: 55px;
 }
 .aboutme-bg-img {
-    position: relative;
     width: 800px;
     height: auto;
-    left: 150px;
 }
 .about-me-text {
     position: absolute;
-    top: 330px;
-    left: 315px;
+    top: 45%;
+    left: 21%;
     width: 350px;
-    height: 350px;
     font-family: var(--font3);
     font-weight: 400;
     font-size: 16px;
@@ -755,6 +760,21 @@ button {
     .welcome-btn{
         width: 130px;
     }
+
+    .about-me-text{
+        top: 47%;
+        font-size: 12px;
+        width: 40%;
+    }
+    .aboutme-bg-img {
+        width: 600px;
+    }   
+    .aboutme-title{
+        font-size: 30px;
+    }
+    #aboutme-title-part {
+        font-size: 45px;
+    }
 }
 @media (max-width:800px) {
     .menu-btn{
@@ -773,6 +793,9 @@ button {
     }
     .menu-list.active{
         transform: translateY(0);
+    }
+    .header .container{
+        padding: 15px 20px;
     }
     .header-contact-btn svg {
         width: 24px;  /* Новый размер */
@@ -844,7 +867,13 @@ button {
         width:40px;
     }
 }
-
+@media (max-width: 610px){
+    .about-me-text {
+        top: 48%;
+        font-size: 10px;
+        width: 39%;
+    }
+}
 @media (max-width: 600px){
     .PROJECTS-title1{
         font-size: 60px;
@@ -910,6 +939,9 @@ button {
     .header {
         margin-bottom: 40px;
     }
+    .header-title{
+        font-size: 16px;
+    }
 
 }
 
@@ -926,28 +958,43 @@ button {
     .welcome-title {
         font-size: 16px;
     }
+    .aboutme-title {
+        font-size: 20px;
+    }
+    #aboutme-title-part {
+        font-size: 30px;
+    }
+    .about-me-text{
+        top: 45%;
+        font-size: 9px;
+    }
 }
 @media (max-width: 465px){
+    .welcome .container {
+        height: 300px;
+    }
+
     .welcome-img{
         display: none;
     }
     .welcome-text{
         align-items: center;
+        gap: 25px;
     }
     .welcome-title {
-        font-size: 30px;
+        font-size: 32px;
     }
     .hi-img{
         width: 35px;
     }
     .welcome-desc {
-        font-size: 13px;
+        font-size: 15px;
         width: 80%;
         text-align: center;
     }
     .welcome-btn {
-        width: 100px;
-        font-size: 15px;
+        width: 120px;
+        font-size: 17px;
         height: 30px;
     }
 }
@@ -981,8 +1028,26 @@ button {
         width: 150px;
         font-size: 15px;
     }
-}
 
+    .about-me-text {
+        top: 46%;
+        font-size: 8px;
+    }
+}
+@media (max-width: 410px){
+    .about-me-text{
+        font-size: 7px;
+        top: 47%;
+    }
+}
+@media (max-width: 400px){
+    .welcome-title{
+        font-size: 29px;
+    }
+    .welcome-text{
+        gap: 30px;
+    }
+}
 @media (max-width: 360px){
     .welcome-title {
         font-size: 24px;
